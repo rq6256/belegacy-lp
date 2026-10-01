@@ -19,8 +19,7 @@
     <a href="#top" class="header__logo"><img src="img/logo.png" alt="Be Legacy" width="150" height="53"></a>
     <nav class="header__nav" id="gnav" aria-label="メインメニュー">
       <ul class="header__list">
-        <li><a href="#value">価値と実績</a></li>
-        <li><a href="#policy">制作方針</a></li>
+        <li><a href="#about">ビーレガシーについて</a></li>
         <li><a href="#features">選ばれる理由</a></li>
         <li><a href="#use">活用方法</a></li>
         <li><a href="#flow">制作の流れ</a></li>
@@ -28,7 +27,10 @@
         <li><a href="#voice">企業様の声</a></li>
         <li><a href="#faq">よくある質問</a></li>
       </ul>
-      <a href="#contact" class="header__cta">企画を相談する</a>
+      <div class="header__btns">
+        <a href="#contact" class="header__btn header__btn--doc" data-modal="document"><span>資料を請求する</span></a>
+        <a href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ1OQm_tpwHusVsD6zyC4J0I1R89GBWl7EatyoEaY0Zpk8MtUeYvqrLIhOOW6YD-E1v710WiqlVc?gv=true" class="header__btn header__btn--consult" data-modal="consult" target="_blank" rel="noopener"><span>企画を相談する</span></a>
+      </div>
     </nav>
     <button class="header__toggle" type="button" aria-controls="gnav" aria-expanded="false" aria-label="メニューを開く">
       <span></span><span></span><span></span>
@@ -46,13 +48,19 @@
       <p class="hero__tag">経営者・代表者インタビュー募集</p>
       <h1 class="hero__title">
         <span class="hero__line">求人票だけでは</span>
-        <span class="hero__line">伝わらな<span class="t-kern1">い</span>「<span class="grad-v">想い</span><span class="t-kern2">」</span>を</span>
-        <span class="hero__line"><span class="t-k045">届</span><span class="t-k360">ける</span><span class="t-k225">メ</span><span class="t-k450">デ</span><span class="t-k495">ィ</span>ア</span>
+        <span class="hero__line">伝わらな<span class="t-kern1">い</span>「<span class="grad-v">想い</span><span class="t-kern2">」</span>を<span class="k-01">届</span><span class="k-08">ける</span></span>
+        <span class="hero__line"><span class="k-p01">地</span><span class="k-03">方</span><span class="k-p01">企</span><span class="k-02">業</span><span class="k-05">の</span><span class="k-06">た</span><span class="k-08">めのメ</span><span class="k-19">デ</span><span class="k-17">ィ</span>ア</span>
       </h1>
       <p class="hero__lead">地方企業・経営者に密着し、代表の言葉や職場のリアルを一本の動画に。<br>応募前の企業理解を深め、ミスマッチのない採用へ。</p>
       <div class="hero__cta">
-        <p class="hero__cta-note">30分相談で最適な企画・活用法をご提案</p>
-        <a href="#contact" class="btn btn--hero"><span class="btn__label">企画を相談する</span><img class="btn__arrow" src="img/arrow-right.svg" alt="" width="24" height="24"></a>
+        <div class="hero__cta-item">
+          <p class="hero__cta-note">30分のオンライン相談で<br>貴社に合う企画と活用方法をご案内！</p>
+          <a href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ1OQm_tpwHusVsD6zyC4J0I1R89GBWl7EatyoEaY0Zpk8MtUeYvqrLIhOOW6YD-E1v710WiqlVc?gv=true" class="btn btn--hero" data-modal="consult" target="_blank" rel="noopener"><span class="btn__label">企画を相談する</span><img class="btn__arrow" src="img/arrow-right.svg" alt="" width="24" height="24"></a>
+        </div>
+        <div class="hero__cta-item">
+          <p class="hero__cta-note">地方企業のための<br>採用SNSガイドラインを配布中！</p>
+          <a href="#contact" class="btn btn--hero btn--outline" data-modal="document"><span class="btn__label">資料を請求する</span><img class="btn__arrow" src="img/arrow-right-green.svg" alt="" width="24" height="24"></a>
+        </div>
       </div>
     </div>
 
@@ -99,12 +107,58 @@
   </div>
 </section>
 
-<!-- ============ Value & Results ============ -->
-<section class="sec value" id="value">
+<!-- ============ SNS Recruiting ============ -->
+<section class="sec sns" id="sns">
+  <div class="sns__bg" aria-hidden="true"></div>
+  <div class="inner">
+    <div class="sec-head sec-head--white">
+      <p class="sec-head__en">SNS Recruiting</p>
+      <h2 class="sec-head__ttl">採用活動で、SNSを活用できていますか？</h2>
+      <p class="sec-head__lead">会社の魅力を届ける方法は、大きく2つあります。</p>
+    </div>
+    <div class="sns__diagram">
+      <span class="sns__tree" aria-hidden="true"></span>
+      <ul class="sns__ways">
+        <li class="way way--1">
+          <span class="way__pill"><b>01</b>自社から届ける</span>
+          <img class="way__icon" src="img/icon-phone.svg" alt="" width="81" height="81">
+          <div class="way__body">
+            <h3 class="way__ttl">自社でSNSを運用する</h3>
+            <p class="way__txt">日々の仕事や職場の様子を<br>自社のアカウントから発信する。</p>
+          </div>
+        </li>
+        <li class="way way--2">
+          <span class="way__pill"><b>02</b>メディアを通じて届ける</span>
+          <img class="way__icon" src="img/icon-youtube.svg" alt="" width="70" height="70">
+          <div class="way__body">
+            <h3 class="way__ttl">メディアに出演する</h3>
+            <p class="way__txt">取材・発信の力を借りて<br>まだ出会えていない人に会社を知ってもらう。</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <p class="sns__but">でも、自社だけで続けるのは大変。</p>
+    <ul class="sns__worries">
+      <li class="worry worry--1"><img src="img/sns-worry-01.webp" alt="" width="210" height="210" loading="lazy"><p>何を発信すれば<br>いいか分からない</p></li>
+      <li class="worry worry--2"><img src="img/sns-worry-02.webp" alt="" width="200" height="200" loading="lazy"><p>撮影や編集に<br>時間が取れない</p></li>
+      <li class="worry worry--3"><img src="img/sns-worry-03.webp" alt="" width="210" height="210" loading="lazy"><p>投稿を続ける<br>担当者がいない</p></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ Bridge ============ -->
+<section class="bridge">
+  <p class="bridge__pre">それなら</p>
+  <h2 class="bridge__ttl"><img src="img/logo.png" alt="Be Legacy" width="167" height="59"><span>で会社の魅力を<br class="sp-only"><span class="grad">地域に届けませんか？</span></span></h2>
+  <a href="#about" class="bridge__next" aria-label="ビーレガシーについて"><img src="img/chevron-down.svg" alt="" width="15" height="9"></a>
+</section>
+
+<!-- ============ About & Results ============ -->
+<section class="sec value" id="about">
   <div class="value__bg" aria-hidden="true"></div>
   <div class="inner">
     <div class="sec-head">
-      <p class="sec-head__en">Value &amp; Results</p>
+      <p class="sec-head__en">About &amp; Results</p>
       <h2 class="sec-head__ttl sec-head__ttl--logo"><img src="img/logo-heading.png" alt="Be Legacy" width="167" height="59">は地域特化型の採用メディア</h2>
     </div>
 
@@ -114,7 +168,7 @@
         <img class="about__mock2" src="img/mock-02.webp" alt="" width="494" height="328">
       </div>
       <div class="about__body">
-        <p class="label">Value</p>
+        <p class="label">About</p>
         <h3 class="sub-ttl sub-ttl--logo"><img src="img/logo-heading.png" alt="Be Legacy" width="131" height="46">とは</h3>
         <span class="bar" aria-hidden="true"></span>
         <p class="about__catch"><span class="grad">平均1万回の再生回数</span>と<span class="grad">新聞掲載</span>で<br>狙った地域にアプローチできる</p>
@@ -128,105 +182,76 @@
       <ul class="results__list">
         <li class="rcard">
           <span class="pill">実績 01</span>
-          <p class="rcard__ttl">動画公開後2週間で<br>求人応募数が<span class="grad-v">2倍</span>に</p>
-          <div class="rcard__img"><img src="img/results-01.webp" alt="" width="155" height="155"></div>
-          <p class="rcard__txt">会社の魅力と現場のリアルが伝わり<br>応募のきっかけが生まれました。</p>
+          <p class="rcard__ttl">動画公開1ヶ月で<br>応募者数が<span class="grad">28人</span>に</p>
+          <div class="chart" aria-hidden="true">
+            <div class="chart__col chart__col--before"><span class="chart__val">1<small>人</small></span><span class="chart__bar chart__bar--before"></span><span class="chart__x">公開前/月</span></div>
+            <div class="chart__col chart__col--after"><span class="chart__val">28<small>人</small></span><span class="chart__bar chart__bar--after"></span><span class="chart__x">公開後1ヶ月</span></div>
+            <svg class="chart__arrow" width="21" height="20" viewBox="0 0 21 20" fill="none"><defs><linearGradient id="ga28" x1="0" y1="20" x2="21" y2="0" gradientUnits="userSpaceOnUse"><stop stop-color="#3BC152"/><stop offset="1" stop-color="#4EAA90"/></linearGradient></defs><path d="M1.5 18.5L19 1.5M19 1.5H8M19 1.5V12" stroke="url(#ga28)" stroke-width="3"/></svg>
+          </div>
+          <p class="rcard__txt">会社の魅力が伝わり<br>応募のきっかけが生まれています。</p>
         </li>
         <li class="rcard">
           <span class="pill">実績 02</span>
-          <p class="rcard__ttl">面接に進んだ方の<span class="grad">5人に1人</span>が<br>面接前に動画を視聴</p>
-          <div class="rcard__img"><img src="img/results-02.webp" alt="" width="155" height="155"></div>
-          <p class="rcard__txt">応募前・面接前の企業理解に、<br>動画が役立っています。</p>
+          <p class="rcard__ttl">HPからのお問い合わせが<br>月<span class="grad">0件 → 8件</span>に</p>
+          <div class="chart" aria-hidden="true">
+            <div class="chart__col chart__col--before"><span class="chart__val">0<small>件</small></span><span class="chart__x">公開前/月</span></div>
+            <div class="chart__col chart__col--after"><span class="chart__val">8<small>件</small></span><span class="chart__bar chart__bar--after"></span><span class="chart__x">公開後1ヶ月</span></div>
+            <svg class="chart__arrow" width="21" height="20" viewBox="0 0 21 20" fill="none"><defs><linearGradient id="ga8" x1="0" y1="20" x2="21" y2="0" gradientUnits="userSpaceOnUse"><stop stop-color="#3BC152"/><stop offset="1" stop-color="#4EAA90"/></linearGradient></defs><path d="M1.5 18.5L19 1.5M19 1.5H8M19 1.5V12" stroke="url(#ga8)" stroke-width="3"/></svg>
+          </div>
+          <p class="rcard__txt">動画が会社を知る接点となり<br>お問い合わせにつながっています。</p>
         </li>
         <li class="rcard">
           <span class="pill">実績 03</span>
-          <p class="rcard__ttl">動画公開から1ヶ月で、<br>YouTube <span class="grad">指名検索1位</span>を獲得</p>
-          <div class="rcard__img rcard__img--sm"><img src="img/results-03.webp" alt="" width="140" height="140"><img class="rcard__yt" src="img/icon-yt-screen.svg" alt="" width="48" height="48"></div>
+          <p class="rcard__ttl">動画公開から1ヶ月で、<br>YouTub<span class="ls15">e</span><span class="grad">指名検索1<span class="ls05">位</span></span>を獲得</p>
+          <div class="rcard__shot"><img src="img/results-youtube.webp" alt="YouTubeで社名を検索した結果、出演動画が1位に表示されている画面" width="298" height="148" loading="lazy"><span class="rcard__hl" aria-hidden="true"></span></div>
           <p class="rcard__txt">社名で検索した際にも<br>会社を知る動画が見つかる状態に。</p>
         </li>
       </ul>
-      <p class="note results__note">※いずれも出演企業様の事例であり、効果を保証するものではありません。企業名・業種を掲載する場合は、掲載可否を別途確認します。</p>
+      <p class="note results__note">※いずれも出演企業様の事例であり、効果を保証するものではありません。</p>
     </div>
 
     <div class="cta cta--value">
       <p class="cta__lead">採用への活かし方も、あわせてご相談ください</p>
-      <a href="#contact" class="btn btn--lg"><span class="btn__label">企画を相談する</span><img class="btn__arrow" src="img/arrow-right.svg" alt="" width="24" height="24"></a>
+      <a href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ1OQm_tpwHusVsD6zyC4J0I1R89GBWl7EatyoEaY0Zpk8MtUeYvqrLIhOOW6YD-E1v710WiqlVc?gv=true" class="btn btn--lg" data-modal="consult" target="_blank" rel="noopener"><span class="btn__label">企画を相談する</span><img class="btn__arrow" src="img/arrow-right.svg" alt="" width="24" height="24"></a>
       <p class="cta__sub">30分のオンライン相談で、貴社に合う企画と活用方法をご案内します</p>
     </div>
   </div>
 </section>
 
-<!-- ============ Plan & Policy ============ -->
-<section class="sec policy" id="policy">
+<!-- ============ Composition ============ -->
+<section class="sec steps" id="composition">
   <div class="inner">
     <div class="sec-head">
-      <p class="sec-head__en">Plan &amp; Policy</p>
-      <h2 class="sec-head__ttl sec-head__ttl--logo"><img src="img/logo-heading.png" alt="Be Legacy" width="167" height="59">の企画・制作方針</h2>
-      <p class="sec-head__lead">ビーレガシーが届けるのは、企業の宣伝文句ではありません。<br>現場の工夫、決断の理由、そこで働く人たちの言葉——地域で挑戦を続ける人たちの「仕事」そのものです。</p>
+      <p class="sec-head__en">Composition</p>
+      <h2 class="sec-head__ttl steps__ttl">一本の動画で伝える、4つのステップ</h2>
     </div>
-
-    <ul class="policy__list">
-      <li class="pcard">
-        <span class="pill">方針 01</span>
-        <span class="pcard__icon pcard__icon--q"><img src="img/icon-question.svg" alt="" width="45" height="45"></span>
-        <h3 class="pcard__ttl">会社紹介ではなく<br>「問い」から企画する</h3>
-        <span class="bar bar--c" aria-hidden="true"></span>
-        <p class="pcard__txt">会社・サービスの説明から始めるのではなく、「地域で、この仕事はなぜ続いてきたのか」という問いから企画をつくります。</p>
-      </li>
-      <li class="pcard">
-        <span class="pill">方針 02</span>
-        <span class="pcard__icon"><img src="img/icon-camera-sm.svg" alt="" width="45" height="45"></span>
-        <h3 class="pcard__ttl">密着で<br>現場の実践を描く</h3>
-        <span class="bar bar--c" aria-hidden="true"></span>
-        <p class="pcard__txt">実際の仕事の現場に密着し、日々の工夫やリアルな空気感を映像に残します。社員の方の声を通じて、事業の厚みを伝えます。</p>
-      </li>
-      <li class="pcard">
-        <span class="pill">方針 03</span>
-        <span class="pcard__icon"><img src="img/icon-mic.svg" alt="" width="45" height="45"></span>
-        <h3 class="pcard__ttl">対談で経営者本人の<br>言葉を引き出す</h3>
-        <span class="bar bar--c" aria-hidden="true"></span>
-        <p class="pcard__txt">代表者ご本人との対談で、想いや決断の理由を掘り下げます。表面的な紹介ではなく、ご本人の言葉だからこそ記憶に残ります。</p>
-      </li>
-      <li class="pcard">
-        <span class="pill">方針 04</span>
-        <span class="pcard__icon"><img src="img/icon-book.svg" alt="" width="45" height="45"></span>
-        <h3 class="pcard__ttl">視聴者が「学び」として<br>見られる編集</h3>
-        <span class="bar bar--c" aria-hidden="true"></span>
-        <p class="pcard__txt">視聴者が企業を知ると同時に、自分の仕事に持ち帰れる学びを得られる編集を行います。宣伝色が薄まり、自然と信頼が積み上がります。</p>
-      </li>
-    </ul>
-
-    <div class="steps">
-      <p class="label">Composition</p>
-      <h3 class="steps__ttl">一本の動画で伝える、4つのステップ</h3>
-      <div class="steps__panel">
-        <ol class="steps__list">
-          <li class="scard">
-            <span class="pill pill--step">ステップ 01</span>
-            <h4 class="scard__ttl">テーマを提示する</h4>
-            <img class="scard__img" src="img/step-01.webp" alt="" width="214" height="120">
-            <p class="scard__txt">今回描く「学び」の<br>テーマを共有</p>
-          </li>
-          <li class="scard">
-            <span class="pill pill--step">ステップ 02</span>
-            <h4 class="scard__ttl">実際の仕事を見せる</h4>
-            <img class="scard__img" src="img/step-02.webp" alt="" width="214" height="120">
-            <p class="scard__txt">密着で、現場の工夫と<br>リアルに迫る</p>
-          </li>
-          <li class="scard">
-            <span class="pill pill--step">ステップ 03</span>
-            <h4 class="scard__ttl">社員の声を聞く</h4>
-            <img class="scard__img" src="img/step-03.webp" alt="" width="214" height="120">
-            <p class="scard__txt">現場の実践から<br>事業の厚みを伝える</p>
-          </li>
-          <li class="scard">
-            <span class="pill pill--step">ステップ 04</span>
-            <h4 class="scard__ttl">対談で深掘りする</h4>
-            <img class="scard__img" src="img/step-04.webp" alt="" width="214" height="120">
-            <p class="scard__txt">決断の理由と<br>地域で続ける意味を掘り下げる</p>
-          </li>
-        </ol>
-      </div>
+    <div class="steps__panel">
+      <ol class="steps__list">
+        <li class="scard">
+          <span class="pill pill--step">ステップ 01</span>
+          <h3 class="scard__ttl">テーマを提示する</h3>
+          <img class="scard__img" src="img/step-01.webp" alt="" width="214" height="120">
+          <p class="scard__txt">今回描く「学び」の<br>テーマを共有</p>
+        </li>
+        <li class="scard">
+          <span class="pill pill--step">ステップ 02</span>
+          <h3 class="scard__ttl">実際の仕事を見せる</h3>
+          <img class="scard__img" src="img/step-02.webp" alt="" width="214" height="120">
+          <p class="scard__txt">密着で、現場の工夫と<br>リアルに迫る</p>
+        </li>
+        <li class="scard">
+          <span class="pill pill--step">ステップ 03</span>
+          <h3 class="scard__ttl">社員の声を聞く</h3>
+          <img class="scard__img" src="img/step-03.webp" alt="" width="214" height="120">
+          <p class="scard__txt">現場の実践から<br>事業の厚みを伝える</p>
+        </li>
+        <li class="scard">
+          <span class="pill pill--step">ステップ 04</span>
+          <h3 class="scard__ttl">対談で深掘りする</h3>
+          <img class="scard__img" src="img/step-04.webp" alt="" width="214" height="120">
+          <p class="scard__txt">決断の理由と<br>地域で続ける意味を掘り下げる</p>
+        </li>
+      </ol>
     </div>
   </div>
 </section>
@@ -242,7 +267,7 @@
     </div>
     <ul class="features__list">
       <li class="fcard">
-        <div class="fcard__img fcard__img--1"><img src="img/features-01.webp" alt="" width="225" height="225"></div>
+        <div class="fcard__img"><img src="img/features-shot-01.webp" alt="地方新聞の掲載記事" width="304" height="171" loading="lazy"></div>
         <div class="fcard__box">
           <span class="pill">理由 01</span>
           <h3 class="fcard__ttl">YouTubeだけで終わらない<br><span class="grad">地方新聞</span>にも広がる</h3>
@@ -251,7 +276,7 @@
         <p class="note fcard__note">※新聞掲載には各新聞社による事前審査があり、掲載の可否・掲載時期はお約束できません。</p>
       </li>
       <li class="fcard">
-        <div class="fcard__img fcard__img--2"><img src="img/features-02.webp" alt="" width="235" height="235"></div>
+        <div class="fcard__img"><img src="img/features-shot-02.webp" alt="企業の採用ページに埋め込まれた動画" width="304" height="171" loading="lazy"></div>
         <div class="fcard__box">
           <span class="pill">理由 02</span>
           <h3 class="fcard__ttl">公開後も<span class="grad">採用・営業</span>の<br>接点で活かせる</h3>
@@ -259,7 +284,7 @@
         </div>
       </li>
       <li class="fcard">
-        <div class="fcard__img fcard__img--3"><img src="img/features-03.webp" alt="" width="200" height="200"></div>
+        <div class="fcard__img"><img src="img/features-shot-03.webp" alt="原村長が出演した動画のサムネイル" width="304" height="171" loading="lazy"></div>
         <div class="fcard__box">
           <span class="pill">理由 03</span>
           <h3 class="fcard__ttl"><span class="grad">地域のキーパーソン</span>も<br>出演するメディア</h3>
@@ -325,7 +350,7 @@
       <p class="terms__txt">各用途での利用は、契約条件の範囲でご案内します。著作権はビーレガシーに帰属します。動画・記事のそのままの転載や再アップロードはできません。</p>
     </div>
     <div class="cta cta--use">
-      <a href="#contact" class="btn btn--lg"><span class="btn__label">企画を相談する</span><img class="btn__arrow" src="img/arrow-right.svg" alt="" width="24" height="24"></a>
+      <a href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ1OQm_tpwHusVsD6zyC4J0I1R89GBWl7EatyoEaY0Zpk8MtUeYvqrLIhOOW6YD-E1v710WiqlVc?gv=true" class="btn btn--lg" data-modal="consult" target="_blank" rel="noopener"><span class="btn__label">企画を相談する</span><img class="btn__arrow" src="img/arrow-right.svg" alt="" width="24" height="24"></a>
       <p class="cta__sub">30分のオンライン相談で、貴社に合う企画と活用方法をご案内します</p>
     </div>
   </div>
@@ -425,76 +450,20 @@
     <p class="sec-head__en">Voice</p>
     <h2 class="sec-head__ttl">出演した企業様の声</h2>
   </div>
-  <div class="voice__slider" tabindex="0" aria-label="出演した企業様の声（横スクロール）">
-    <ul class="voice__track">
-      <li class="vcard">
-        <div class="vcard__head">
-          <span class="vcard__avatar" aria-hidden="true"></span>
-          <div class="vcard__who">
-            <span class="vcard__co">株式会社ダミーダミー</span>
-            <span class="vcard__pos">代表取締役</span>
-            <span class="vcard__name">山田 太郎 様</span>
-          </div>
-        </div>
-        <h3 class="vcard__ttl">価格だけでは見えない、<br>眼鏡店の価値。</h3>
-        <span class="bar" aria-hidden="true"></span>
-        <p class="vcard__txt">出演いただいた複数の企業様から寄せられたコメントを、カード形式で掲載します。出演いただいた複数の企業様から寄せられたコメントを、カード形式で掲載します。出演いただいた複数の企業様から寄せられたコメントを、カード形式で掲載します。</p>
-      </li>
-      <li class="vcard">
-        <div class="vcard__head">
-          <span class="vcard__avatar" aria-hidden="true"></span>
-          <div class="vcard__who">
-            <span class="vcard__co">株式会社ダミーダミー</span>
-            <span class="vcard__pos">代表取締役</span>
-            <span class="vcard__name">山田 太郎 様</span>
-          </div>
-        </div>
-        <h3 class="vcard__ttl">価格だけでは見えない、<br>眼鏡店の価値。</h3>
-        <span class="bar" aria-hidden="true"></span>
-        <p class="vcard__txt">出演いただいた複数の企業様から寄せられたコメントを、カード形式で掲載します。出演いただいた複数の企業様から寄せられたコメントを、カード形式で掲載します。出演いただいた複数の企業様から寄せられたコメントを、カード形式で掲載します。</p>
-      </li>
-      <li class="vcard">
-        <div class="vcard__head">
-          <span class="vcard__avatar" aria-hidden="true"></span>
-          <div class="vcard__who">
-            <span class="vcard__co">株式会社ダミーダミー</span>
-            <span class="vcard__pos">代表取締役</span>
-            <span class="vcard__name">山田 太郎 様</span>
-          </div>
-        </div>
-        <h3 class="vcard__ttl">価格だけでは見えない、<br>眼鏡店の価値。</h3>
-        <span class="bar" aria-hidden="true"></span>
-        <p class="vcard__txt">出演いただいた複数の企業様から寄せられたコメントを、カード形式で掲載します。出演いただいた複数の企業様から寄せられたコメントを、カード形式で掲載します。出演いただいた複数の企業様から寄せられたコメントを、カード形式で掲載します。</p>
-      </li>
-      <li class="vcard">
-        <div class="vcard__head">
-          <span class="vcard__avatar" aria-hidden="true"></span>
-          <div class="vcard__who">
-            <span class="vcard__co">株式会社ダミーダミー</span>
-            <span class="vcard__pos">代表取締役</span>
-            <span class="vcard__name">山田 太郎 様</span>
-          </div>
-        </div>
-        <h3 class="vcard__ttl">価格だけでは見えない、<br>眼鏡店の価値。</h3>
-        <span class="bar" aria-hidden="true"></span>
-        <p class="vcard__txt">出演いただいた複数の企業様から寄せられたコメントを、カード形式で掲載します。出演いただいた複数の企業様から寄せられたコメントを、カード形式で掲載します。出演いただいた複数の企業様から寄せられたコメントを、カード形式で掲載します。</p>
-      </li>
-      <li class="vcard">
-        <div class="vcard__head">
-          <span class="vcard__avatar" aria-hidden="true"></span>
-          <div class="vcard__who">
-            <span class="vcard__co">株式会社ダミーダミー</span>
-            <span class="vcard__pos">代表取締役</span>
-            <span class="vcard__name">山田 太郎 様</span>
-          </div>
-        </div>
-        <h3 class="vcard__ttl">価格だけでは見えない、<br>眼鏡店の価値。</h3>
-        <span class="bar" aria-hidden="true"></span>
-        <p class="vcard__txt">出演いただいた複数の企業様から寄せられたコメントを、カード形式で掲載します。出演いただいた複数の企業様から寄せられたコメントを、カード形式で掲載します。出演いただいた複数の企業様から寄せられたコメントを、カード形式で掲載します。</p>
-      </li>
-    </ul>
+  <div class="inner">
+    <div class="voice__item">
+      <a href="#" class="voice__thumb" aria-label="出演企業様のインタビュー動画を見る">
+        <img src="img/voice-thumb.webp" alt="茅野の交流拠点 8Peaks livingとは？" width="583" height="328" loading="lazy">
+        <img class="voice__play" src="img/icon-yt-red.svg" alt="" width="116" height="116">
+      </a>
+      <div class="voice__body">
+        <p class="voice__co">株式会社ダミーダミー</p>
+        <p class="voice__who"><span>代表取締役</span><span>山田 太郎 様</span></p>
+        <h3 class="voice__ttl">出演のきっかけから、<br>公開後の変化まで。</h3>
+        <p class="voice__txt">企画に感じた魅力、取材・撮影の感想、公開後の活用について。出演企業の声を、一本のインタビューでご紹介します。<br>ダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミー。</p>
+      </div>
+    </div>
   </div>
-  <div class="voice__progress" aria-hidden="true"><span class="voice__thumb"></span></div>
 </section>
 
 <!-- ============ CTA (after voice) ============ -->
@@ -502,7 +471,7 @@
   <div class="inner">
     <div class="cta cta--voice">
       <p class="cta__lead">貴社に合う企画を、一緒に考えます</p>
-      <a href="#contact" class="btn btn--lg"><span class="btn__label">企画を相談する</span><img class="btn__arrow" src="img/arrow-right.svg" alt="" width="24" height="24"></a>
+      <a href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ1OQm_tpwHusVsD6zyC4J0I1R89GBWl7EatyoEaY0Zpk8MtUeYvqrLIhOOW6YD-E1v710WiqlVc?gv=true" class="btn btn--lg" data-modal="consult" target="_blank" rel="noopener"><span class="btn__label">企画を相談する</span><img class="btn__arrow" src="img/arrow-right.svg" alt="" width="24" height="24"></a>
       <p class="cta__sub">30分のオンライン相談で、貴社に合う企画と活用方法をご案内します</p>
     </div>
   </div>
@@ -548,9 +517,15 @@
       <h2 class="sec-head__ttl">まずは、企画について相談してみませんか</h2>
       <p class="sec-head__lead">「うちの会社に合うか分からない」という段階でも大丈夫です。</p>
     </div>
-    <div class="cta cta--contact">
-      <a href="#" class="btn btn--lg"><span class="btn__label">企画を相談する</span><img class="btn__arrow" src="img/arrow-right.svg" alt="" width="24" height="24"></a>
-      <p class="cta__sub">30分のオンライン相談で、貴社に合う企画と活用方法をご案内します</p>
+    <div class="contact__btns">
+      <div class="contact__item">
+        <p class="contact__note">30分のオンライン相談で<br>貴社に合う企画と活用方法をご案内！</p>
+        <a href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ1OQm_tpwHusVsD6zyC4J0I1R89GBWl7EatyoEaY0Zpk8MtUeYvqrLIhOOW6YD-E1v710WiqlVc?gv=true" class="btn btn--contact" data-modal="consult" target="_blank" rel="noopener"><span class="btn__label">企画を相談する</span><img class="btn__arrow" src="img/arrow-right.svg" alt="" width="24" height="24"></a>
+      </div>
+      <div class="contact__item">
+        <p class="contact__note">地方企業のための<br>採用SNSガイドラインを配布中！</p>
+        <a href="#contact" class="btn btn--contact btn--outline" data-modal="document"><span class="btn__label">資料を請求する</span><img class="btn__arrow" src="img/arrow-right-green.svg" alt="" width="24" height="24"></a>
+      </div>
     </div>
   </div>
 </section>
@@ -573,8 +548,8 @@
     </div>
     <div class="footer__right">
       <ul class="footer__nav">
-        <li><a href="#value">価値と実績</a></li>
-        <li><a href="#policy">制作方針</a></li>
+        <li><a href="#about">価値と実績</a></li>
+        <li><a href="#composition">制作方針</a></li>
         <li><a href="#features">選ばれる理由</a></li>
         <li><a href="#use">活用方法</a></li>
         <li><a href="#flow">制作の流れ</a></li>
@@ -582,12 +557,43 @@
         <li><a href="#voice">企業様の声</a></li>
         <li><a href="#faq">よくある質問</a></li>
       </ul>
-      <a href="#contact" class="footer__cta">企画を相談する</a>
+      <div class="footer__btns">
+        <a href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ1OQm_tpwHusVsD6zyC4J0I1R89GBWl7EatyoEaY0Zpk8MtUeYvqrLIhOOW6YD-E1v710WiqlVc?gv=true" class="footer__btn footer__btn--consult" data-modal="consult" target="_blank" rel="noopener">企画を相談する</a>
+        <a href="#contact" class="footer__btn footer__btn--doc" data-modal="document">資料を請求する</a>
+      </div>
     </div>
   </div>
   <a href="#top" class="pagetop"><span class="pagetop__circle"><img src="img/chevron-green.svg" alt="" width="12" height="7"></span><span class="pagetop__txt">Page TOP</span></a>
   <p class="footer__copy">Copyright(c) 2026 © BE-LEGACY&nbsp; All Rights Reserved.</p>
 </footer>
+
+<!-- ============ Modals ============ -->
+<dialog class="modal modal--consult" id="modal-consult" aria-labelledby="modal-consult-ttl">
+  <div class="modal__panel">
+    <div class="modal__head">
+      <p class="modal__ttl" id="modal-consult-ttl">企画を相談する<small>30分のオンライン相談｜ご都合の良い日時をお選びください</small></p>
+      <button type="button" class="modal__close" data-modal-close aria-label="閉じる"></button>
+    </div>
+    <div class="modal__body modal__body--frame">
+      <iframe class="modal__frame" title="オンライン相談の予約カレンダー" data-src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ1OQm_tpwHusVsD6zyC4J0I1R89GBWl7EatyoEaY0Zpk8MtUeYvqrLIhOOW6YD-E1v710WiqlVc?gv=true" loading="lazy"></iframe>
+    </div>
+    <p class="modal__foot">カレンダーが表示されない場合は<a href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ1OQm_tpwHusVsD6zyC4J0I1R89GBWl7EatyoEaY0Zpk8MtUeYvqrLIhOOW6YD-E1v710WiqlVc?gv=true" target="_blank" rel="noopener">こちら（別タブで開く）</a></p>
+  </div>
+</dialog>
+
+<dialog class="modal modal--document" id="modal-document" aria-labelledby="modal-document-ttl">
+  <div class="modal__panel">
+    <div class="modal__head">
+      <p class="modal__ttl" id="modal-document-ttl">資料を請求する<small>地方企業のための採用SNSガイドライン</small></p>
+      <button type="button" class="modal__close" data-modal-close aria-label="閉じる"></button>
+    </div>
+    <div class="modal__body modal__body--doc">
+      <!-- 資料請求フォームの埋め込み先 -->
+      <p class="modal__msg">資料請求フォームは現在準備中です。<br>お急ぎの方は、オンライン相談からお気軽にお問い合わせください。</p>
+      <a href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ1OQm_tpwHusVsD6zyC4J0I1R89GBWl7EatyoEaY0Zpk8MtUeYvqrLIhOOW6YD-E1v710WiqlVc?gv=true" class="btn btn--modal" data-modal="consult" target="_blank" rel="noopener"><span class="btn__label">企画を相談する</span><img class="btn__arrow" src="img/arrow-right.svg" alt="" width="24" height="24"></a>
+    </div>
+  </div>
+</dialog>
 
 <script src="js/main.js"></script>
 </body>

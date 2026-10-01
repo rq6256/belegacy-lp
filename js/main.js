@@ -26,41 +26,38 @@
     });
   });
 
-  /* ---- voice slider: progress bar + mouse drag ---- */
-  const slider = document.querySelector('.voice__slider');
-  const thumb = document.querySelector('.voice__thumb');
-  const bar = document.querySelector('.voice__progress');
-  if (slider && thumb && bar) {
-    const update = () => {
-      const max = slider.scrollWidth - slider.clientWidth;
-      const barW = bar.clientWidth;
-      const thumbW = barW * 0.2525; // design: 101 / 400
-      thumb.style.width = thumbW + 'px';
-      const p = max > 0 ? slider.scrollLeft / max : 0;
-      thumb.style.transform = `translateX(${(barW - thumbW) * p}px)`;
-      bar.style.visibility = max > 0 ? 'visible' : 'hidden';
-    };
-    slider.addEventListener('scroll', update, { passive: true });
-    window.addEventListener('resize', update);
-    update();
-
-    let startX = 0, startLeft = 0, dragging = false, moved = false;
-    slider.addEventListener('pointerdown', (e) => {
-      if (e.pointerType !== 'mouse') return;
-      dragging = true; moved = false;
-      startX = e.clientX; startLeft = slider.scrollLeft;
+  /* ---- modals: consultation calendar / document request ---- */
+  const modals = {
+    consult: document.getElementById('modal-consult'),
+    document: document.getElementById('modal-document'),
+  };
+  const root = document.documentElement;
+  const closeAll = () => {
+    Object.values(modals).forEach((m) => { if (m && m.open) m.close(); });
+  };
+  const openModal = (name) => {
+    const modal = modals[name];
+    if (!modal || typeof modal.showModal !== 'function') return false;
+    closeAll();
+    const frame = modal.querySelector('iframe[data-src]');
+    if (frame && !frame.src) frame.src = frame.dataset.src;
+    if (header) header.classList.remove('is-open');
+    modal.showModal();
+    root.classList.add('is-modal-open');
+    return true;
+  };
+  Object.values(modals).forEach((modal) => {
+    if (!modal) return;
+    modal.addEventListener('close', () => {
+      if (!Object.values(modals).some((m) => m && m.open)) root.classList.remove('is-modal-open');
     });
-    window.addEventListener('pointermove', (e) => {
-      if (!dragging) return;
-      const dx = e.clientX - startX;
-      if (Math.abs(dx) > 3) { moved = true; slider.classList.add('is-drag'); }
-      slider.scrollLeft = startLeft - dx;
+    // close when clicking the backdrop
+    modal.addEventListener('click', (e) => { if (e.target === modal) modal.close(); });
+    modal.querySelectorAll('[data-modal-close]').forEach((btn) => btn.addEventListener('click', () => modal.close()));
+  });
+  document.querySelectorAll('[data-modal]').forEach((trigger) => {
+    trigger.addEventListener('click', (e) => {
+      if (openModal(trigger.dataset.modal)) e.preventDefault();
     });
-    window.addEventListener('pointerup', () => {
-      if (!dragging) return;
-      dragging = false;
-      slider.classList.remove('is-drag');
-    });
-    slider.addEventListener('click', (e) => { if (moved) { e.preventDefault(); moved = false; } }, true);
-  }
+  });
 })();
