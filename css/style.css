@@ -795,9 +795,9 @@ html.is-modal-open { overflow: hidden; }
   .hero__title, .hero__lead { padding: 0 var(--pad); }
   .hero__title { font-size: clamp(22px, 7vw, 36px); }
   .hero__lead { font-size: 12.5px; line-height: 22px; }
-  .hero__visual { order: 4; width: 100%; height: min(88vw, 520px); margin-top: 6px; }
-  .hero__person { right: -14%; width: min(112%, 560px); }
-  .hero__badges { left: var(--pad); top: 5%; }
+  .hero__visual { order: 4; width: 100%; height: min(90vw, 520px); margin-top: 14px; overflow: hidden; }
+  .hero__person { left: -14%; right: auto; width: min(100.5vw, 581px); }
+  .hero__badges { left: auto; right: var(--pad); top: 4%; }
   .badge { width: 104px; height: 104px; }
   .badge__s { font-size: 9px; line-height: 14px; }
   .badge--1 { padding-top: 24px; }
