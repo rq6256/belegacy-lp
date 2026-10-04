@@ -285,6 +285,7 @@ main { display: block; }
 ========================================================= */
 .logos { padding: 41px 0 86px; background: #fff; }
 .marquee--logos { --dur: 35s; }
+.marquee--logos .marquee__track { animation-direction: reverse; }
 .marquee--logos .marquee__track { margin-left: 31px; }
 .marquee--logos img { flex: none; width: 1346px; max-width: none; height: 92px; margin-right: 40px; }
 
