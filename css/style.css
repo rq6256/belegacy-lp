@@ -988,3 +988,27 @@ html.is-modal-open { overflow: hidden; }
   .ucard .pill { padding: 0 7px; font-size: 9.5px; }
   .ucard__ttl { font-size: 13px; line-height: 20px; }
 }
+
+/* ---- SP: Case = carousel ---- */
+.case__dots { display: none; }
+@media (max-width: 767px) {
+  .case__list {
+    position: relative; display: flex; gap: 0; max-width: none;
+    margin: 20px calc(-1 * var(--pad)) 0; padding: 18px 11vw 26px;
+    overflow-x: auto; overscroll-behavior-x: contain; scroll-snap-type: x mandatory; scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+  .case__list::-webkit-scrollbar { display: none; }
+  .case__list .ccard {
+    flex: 0 0 78vw; min-height: 0; scroll-snap-align: center;
+    transform: scale(.9); opacity: .55; box-shadow: 0 0 8px rgba(0, 0, 0, .1);
+    transition: transform .45s cubic-bezier(.2, .7, .2, 1), opacity .45s, box-shadow .45s;
+  }
+  .case__list .ccard.is-active { transform: scale(1) translateY(-4px); opacity: 1; box-shadow: 0 14px 30px rgba(28, 91, 39, .22); }
+  .case__dots { display: flex; justify-content: center; gap: 8px; margin-top: 4px; }
+  .case__dots button { width: 8px; height: 8px; border-radius: 100px; background: #cfe3d4; transition: width .35s, background .35s; }
+  .case__dots button.is-active { width: 24px; background: var(--grad-r); }
+}
+@media (max-width: 767px) and (prefers-reduced-motion: reduce) {
+  .case__list .ccard { transition: none; }
+}

@@ -60,4 +60,37 @@
       if (openModal(trigger.dataset.modal)) e.preventDefault();
     });
   });
+
+  /* ---- case: carousel on SP (active card + dots) ---- */
+  const caseList = document.querySelector('.case__list');
+  if (caseList) {
+    const cards = Array.from(caseList.children);
+    const dots = document.createElement('div');
+    dots.className = 'case__dots';
+    const centerOf = (card) => card.offsetLeft - (caseList.clientWidth - card.offsetWidth) / 2;
+    cards.forEach((card, i) => {
+      const b = document.createElement('button');
+      b.type = 'button';
+      b.setAttribute('aria-label', `${i + 1}件目の事例を表示`);
+      b.addEventListener('click', () => caseList.scrollTo({ left: centerOf(card), behavior: 'smooth' }));
+      dots.appendChild(b);
+    });
+    caseList.after(dots);
+    let ticking = false;
+    const update = () => {
+      ticking = false;
+      const c = caseList.scrollLeft + caseList.clientWidth / 2;
+      let best = 0, bestD = Infinity;
+      cards.forEach((card, i) => {
+        const d = Math.abs(card.offsetLeft + card.offsetWidth / 2 - c);
+        if (d < bestD) { bestD = d; best = i; }
+      });
+      cards.forEach((card, i) => card.classList.toggle('is-active', i === best));
+      Array.from(dots.children).forEach((b, i) => b.classList.toggle('is-active', i === best));
+    };
+    const onScroll = () => { if (!ticking) { ticking = true; requestAnimationFrame(update); } };
+    caseList.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
+    update();
+  }
 })();
