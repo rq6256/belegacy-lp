@@ -10,7 +10,7 @@
 
 @media (max-width: 767px) {
   .preview-badge {
-    position: fixed; z-index: 90; left: 10px; bottom: 10px; display: block;
+    position: fixed; z-index: 90; left: 10px; top: 78px; display: block;
     padding: 4px 10px; border-radius: 100px; background: rgba(28, 91, 39, .85); color: #fff;
     font-size: 10px; line-height: 16px; letter-spacing: .05em; pointer-events: none;
   }

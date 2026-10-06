@@ -93,4 +93,25 @@
     window.addEventListener('resize', onScroll);
     update();
   }
+
+  /* ---- SP fixed CTA: show after the hero buttons, hide around contact / footer ---- */
+  const spCta = document.getElementById('spCta');
+  if (spCta) {
+    const heroCta = document.querySelector('.hero__cta');
+    const ends = [document.getElementById('contact'), document.querySelector('.footer')].filter(Boolean);
+    let raf = 0;
+    const update = () => {
+      raf = 0;
+      const vh = window.innerHeight;
+      const pastHero = heroCta ? heroCta.getBoundingClientRect().bottom < 0 : window.scrollY > vh;
+      const atEnd = ends.some((el) => el.getBoundingClientRect().top < vh);
+      const show = pastHero && !atEnd;
+      spCta.classList.toggle('is-show', show);
+      spCta.inert = !show;
+    };
+    const onScroll = () => { if (!raf) raf = requestAnimationFrame(update); };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
+    update();
+  }
 })();
