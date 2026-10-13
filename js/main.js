@@ -124,6 +124,93 @@
     update();
   }
 
+  /* ---- document slider: arrows, dots, swipe / trackpad, mouse drag ---- */
+  document.querySelectorAll('.doc-slider').forEach((slider) => {
+    const track = slider.querySelector('.doc-slider__track');
+    const slides = Array.from(track.children);
+    const prev = slider.querySelector('.doc-slider__nav--prev');
+    const next = slider.querySelector('.doc-slider__nav--next');
+    const dotsBox = slider.querySelector('.doc-slider__dots');
+    const edge = () => parseFloat(getComputedStyle(track).scrollPaddingInlineStart) || 0;
+    const maxScroll = () => track.scrollWidth - track.clientWidth;
+    const posOf = (i) => Math.min(slides[i].offsetLeft - edge(), maxScroll());
+    // distinct stop positions (several slides can share the last one when more than one is visible)
+    let stops = [];
+    let dots = [];
+    const buildStops = () => {
+      const max = maxScroll();
+      stops = [];
+      slides.forEach((_, i) => { const p = Math.max(0, Math.round(posOf(i))); if (!stops.some((q) => Math.abs(q - p) < 3)) stops.push(p); });
+      if (max > 0 && Math.abs(stops[stops.length - 1] - max) > 2) stops.push(Math.round(max));
+      if (dots.length !== stops.length) {
+        dotsBox.textContent = '';
+        dots = stops.map((_, i) => {
+          const b = document.createElement('button');
+          b.type = 'button';
+          b.setAttribute('aria-label', `${i + 1}番目の位置へ移動`);
+          b.addEventListener('click', () => goTo(i));
+          dotsBox.appendChild(b);
+          return b;
+        });
+      }
+      dotsBox.hidden = stops.length < 2;
+    };
+    const goTo = (i) => track.scrollTo({ left: stops[Math.max(0, Math.min(stops.length - 1, i))], behavior: 'smooth' });
+    const current = () => {
+      let best = 0, bestD = Infinity;
+      stops.forEach((p, i) => { const d = Math.abs(p - track.scrollLeft); if (d < bestD) { bestD = d; best = i; } });
+      return best;
+    };
+    buildStops();
+    let raf = 0;
+    const update = () => {
+      raf = 0;
+      const idx = current();
+      dots.forEach((b, i) => b.classList.toggle('is-active', i === idx));
+      prev.disabled = track.scrollLeft <= 2;
+      next.disabled = track.scrollLeft >= maxScroll() - 2;
+    };
+    const onScroll = () => { if (!raf) raf = requestAnimationFrame(update); };
+    window.addEventListener('resize', () => { buildStops(); onScroll(); });
+    prev.addEventListener('click', () => goTo(current() - 1));
+    next.addEventListener('click', () => goTo(current() + 1));
+    track.addEventListener('scroll', onScroll, { passive: true });
+    track.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight') { e.preventDefault(); goTo(current() + 1); }
+      if (e.key === 'ArrowLeft') { e.preventDefault(); goTo(current() - 1); }
+    });
+
+    // mouse drag (touch devices use native swipe)
+    let startX = 0, startLeft = 0, dragging = false, moved = false;
+    track.addEventListener('pointerdown', (e) => {
+      if (e.pointerType !== 'mouse' || e.button !== 0) return;
+      dragging = true; moved = false; startX = e.clientX; startLeft = track.scrollLeft;
+      track.setPointerCapture(e.pointerId);
+    });
+    track.addEventListener('pointermove', (e) => {
+      if (!dragging) return;
+      const dx = e.clientX - startX;
+      if (!moved && Math.abs(dx) > 4) { moved = true; track.classList.add('is-dragging'); }
+      if (moved) track.scrollLeft = startLeft - dx;
+    });
+    const endDrag = (e) => {
+      if (!dragging) return;
+      dragging = false;
+      if (track.hasPointerCapture(e.pointerId)) track.releasePointerCapture(e.pointerId);
+      if (!moved) return;
+      const dx = e.clientX - startX;
+      const from = stops.reduce((bi, p, i) => (Math.abs(p - startLeft) < Math.abs(stops[bi] - startLeft) ? i : bi), 0);
+      track.classList.remove('is-dragging');
+      // a short flick moves one slide in the drag direction
+      let target = current();
+      if (Math.abs(dx) > 40 && target === from) target = from + (dx < 0 ? 1 : -1);
+      goTo(target);
+    };
+    track.addEventListener('pointerup', endDrag);
+    track.addEventListener('pointercancel', endDrag);
+    update();
+  });
+
   /* ---- floating banner (PC / tablet): closable, hidden near the document / contact sections ---- */
   const fbanner = document.getElementById('fbanner');
   if (fbanner) {

@@ -543,11 +543,33 @@ main { display: block; }
 .doc { padding: 73px 0 72px; color: #fff; }
 .doc__bg { position: absolute; inset: 0; z-index: 0; pointer-events: none; background: var(--c-teal) url(../img/texture.webp) center 30% / 100% auto no-repeat; background-blend-mode: multiply; }
 .doc > *:not(.doc__bg) { position: relative; z-index: 1; }
-.marquee--docs { --dur: 70s; margin-top: 46px; padding: 0 0 10px; }
-.marquee--docs .marquee__track { margin-left: 61px; }
-.marquee--docs li { flex: none; width: 552px; margin-right: 13px; }
-.marquee--docs img { display: block; width: 100%; height: auto; border-radius: 5px; box-shadow: 3px 3px 7px rgba(0, 0, 0, .1); }
-.doc__worries { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 50px; }
+.doc-slider { --edge: 61px; --gap: 13px; position: relative; margin-top: 46px; }
+.doc-slider__track {
+  display: flex; gap: var(--gap); padding: 0 var(--edge) 10px; scroll-padding-inline: var(--edge);
+  overflow-x: auto; overscroll-behavior-x: contain; scroll-snap-type: x mandatory; scrollbar-width: none;
+  -webkit-overflow-scrolling: touch; cursor: grab; outline: none;
+}
+.doc-slider__track::-webkit-scrollbar { display: none; }
+.doc-slider__track.is-dragging { cursor: grabbing; scroll-snap-type: none; }
+.doc-slider__track li { flex: none; width: 552px; scroll-snap-align: start; }
+.doc-slider__track img { display: block; width: 100%; height: auto; border-radius: 5px; box-shadow: 3px 3px 7px rgba(0, 0, 0, .1); -webkit-user-drag: none; user-select: none; pointer-events: none; }
+.doc-slider__nav {
+  position: absolute; z-index: 2; top: 130px; width: 50px; height: 50px; border-radius: 50%;
+  background: #fff; box-shadow: 0 4px 14px rgba(0, 0, 0, .18); transition: opacity .3s, transform .3s;
+}
+.doc-slider__nav::before {
+  content: ""; position: absolute; left: 50%; top: 50%; width: 10px; height: 10px; margin: -5px 0 0 -7px;
+  border-top: 2.5px solid var(--c-green); border-right: 2.5px solid var(--c-green); transform: rotate(45deg);
+}
+.doc-slider__nav--prev { left: 24px; }
+.doc-slider__nav--prev::before { margin-left: -3px; transform: rotate(-135deg); }
+.doc-slider__nav--next { right: 24px; }
+.doc-slider__nav:hover { transform: scale(1.06); }
+.doc-slider__nav:disabled { opacity: 0; pointer-events: none; }
+.doc-slider__dots { display: flex; justify-content: center; gap: 8px; margin-top: 16px; }
+.doc-slider__dots button { width: 8px; height: 8px; border-radius: 100px; background: rgba(255, 255, 255, .45); transition: width .35s, background .35s; }
+.doc-slider__dots button.is-active { width: 24px; background: #fff; }
+.doc__worries { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 26px; }
 .doc__worries li {
   display: flex; align-items: center; justify-content: center; height: 53px; padding: 0 37px;
   border-radius: 100px; background: linear-gradient(to right, #3bc152, #39a14a); box-shadow: 3px 3px 7px rgba(0, 0, 0, .1);
@@ -740,7 +762,9 @@ html.is-modal-open { overflow: hidden; }
   .contact__visual--media img { left: 50%; margin-left: -136px; max-width: 100%; }
   .btn--contact .btn__label { font-size: 16px; letter-spacing: .05em; }
   .btn--contact .btn__arrow, .btn--contact.btn--outline .btn__arrow { right: 14px; }
-  .marquee--docs li { width: 440px; }
+  .doc-slider__track li { width: 440px; }
+  .doc-slider { --edge: var(--pad); }
+  .doc-slider__nav { top: 100px; }
 }
 
 @media (max-width: 959px) {
@@ -933,10 +957,11 @@ html.is-modal-open { overflow: hidden; }
 
   .doc { padding: 60px 0 64px; }
   .doc .sec-head__lead br.sp-only { display: inline; }
-  .marquee--docs { margin-top: 30px; }
-  .marquee--docs .marquee__track { margin-left: 0; }
-  .marquee--docs li { width: 280px; margin-right: 10px; }
-  .doc__worries { flex-direction: column; align-items: center; gap: 8px; margin-top: 30px; }
+  .doc-slider { --gap: 10px; margin-top: 30px; }
+  .doc-slider__track li { width: 80vw; max-width: 340px; }
+  .doc-slider__nav { display: none; }
+  .doc-slider__dots { margin-top: 12px; }
+  .doc__worries { flex-direction: column; align-items: center; gap: 8px; margin-top: 26px; }
   .doc__worries li { height: 44px; min-width: 260px; padding: 0 22px; font-size: 14.5px; }
   .doc__text { margin-top: 22px; font-size: 13.5px; line-height: 25px; }
   .doc__text br { display: none; }
