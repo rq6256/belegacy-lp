@@ -639,8 +639,8 @@ main { display: block; }
 .footer__sub a:hover, .footer__nav a:hover { opacity: .7; }
 .footer__yt { display: block; width: 25px; margin-top: 6px; line-height: 0; }
 .footer__yt img { width: 25px; height: 25px; }
-.footer__right { position: relative; width: 314px; padding-top: 13px; }
-.footer__nav { display: grid; grid-template-columns: 108px 94px auto; row-gap: 9px; margin-left: 3px; line-height: 19px; }
+.footer__right { position: relative; min-width: 314px; padding-top: 13px; }
+.footer__nav { display: grid; grid-template-columns: repeat(3, max-content); column-gap: 24px; row-gap: 9px; margin-left: 3px; line-height: 19px; }
 .footer__nav a { font-size: 13px; line-height: 19px; letter-spacing: .05em; white-space: nowrap; }
 .footer__btns { display: flex; gap: 7px; margin-top: 21px; }
 .footer__btn {
@@ -847,6 +847,7 @@ html.is-modal-open { overflow: hidden; }
   .pc-br { display: none; }
 
   .sec-head__ttl, .sec-head__lead, .about__catch, .rcard__ttl, .fcard__ttl, .ucard__ttl, .ccard__ttl, .voice__ttl, .doc__text, .faq__qtxt, .cta__sub, .hero__lead { word-break: auto-phrase; text-wrap: pretty; }
+  @supports not (word-break: auto-phrase) { .js-phrase { word-break: keep-all; overflow-wrap: anywhere; } }
   .sec-head__ttl { text-wrap: balance; }
   .sec-head__en { font-size: 15px; }
   .sec-head__ttl { font-size: 22px; line-height: 32px; }

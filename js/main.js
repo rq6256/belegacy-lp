@@ -288,6 +288,75 @@
     update();
   }
 
+  /* ---- 文節で改行（word-break: auto-phrase 非対応のブラウザ＝iPhone の Safari など向け） ---- */
+  // 文節の区切りに <wbr> を入れ、CSS の word-break: keep-all（.js-phrase）でそこだけ改行させる
+  if (window.Intl && Intl.Segmenter && window.CSS && CSS.supports && !CSS.supports('word-break', 'auto-phrase')) {
+    const segmenter = new Intl.Segmenter('ja', { granularity: 'word' });
+    const KANA = /^[ぁ-ゟー]+$/;
+    const TAIL = /^[、。，．・：；？！）」』】〕〉》”’…〜!?,.:;)\]\s]+$/;
+    const OPEN = /[（「『【〔〈《“‘(\[]$/;
+    const KANJI_END = /[一-鿿々〆]$/;
+    const KANJI_START = /^[一-鿿々〆]/;
+    const JA = /[぀-ヿ一-鿿]/;
+    // 文節の切れ目（文字位置）を返す
+    const phraseBreaks = (text) => {
+      const breaks = [];
+      let prev = '';
+      let pos = 0;
+      for (const { segment } of segmenter.segment(text)) {
+        const join = prev === '' || KANA.test(segment) || TAIL.test(segment) || OPEN.test(prev) ||
+          (KANJI_END.test(prev) && KANJI_START.test(segment)) ||
+          (/[0-9０-９]$/.test(prev) && /^[0-9０-９ヶヵ]/.test(segment));
+        if (join) {
+          prev += segment;
+        } else {
+          if (JA.test(prev) || JA.test(segment)) breaks.push(pos);
+          prev = segment;
+        }
+        pos += segment.length;
+      }
+      return breaks;
+    };
+    const phraseTargets = document.querySelectorAll(
+      '.sec-head__ttl, .sec-head__lead, .about__catch, .rcard__ttl, .fcard__ttl, .ucard__ttl, .ccard__ttl, ' +
+      '.voice__ttl, .doc__text, .faq__qtxt, .cta__sub, .hero__lead, .contact__note'
+    );
+    phraseTargets.forEach((el) => {
+      // 改行（<br>）ごとに区切って処理する
+      const runs = [[]];
+      const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT | NodeFilter.SHOW_ELEMENT);
+      while (walker.nextNode()) {
+        const n = walker.currentNode;
+        if (n.nodeType === 1) { if (n.tagName === 'BR') runs.push([]); }
+        else runs[runs.length - 1].push(n);
+      }
+      runs.forEach((nodes) => {
+        const text = nodes.map((n) => n.nodeValue).join('');
+        if (!JA.test(text)) return;
+        const breaks = phraseBreaks(text);
+        // 後ろから順に <wbr> を差し込む（前の位置がずれないように）
+        let offset = 0;
+        const map = nodes.map((n) => { const s = offset; offset += n.nodeValue.length; return { n, s }; });
+        for (let i = breaks.length - 1; i >= 0; i--) {
+          const b = breaks[i];
+          const hit = map.filter((m) => m.s <= b).pop();
+          if (!hit) continue;
+          const local = b - hit.s;
+          const wbr = document.createElement('wbr');
+          if (local === 0) {
+            hit.n.parentNode.insertBefore(wbr, hit.n);
+          } else if (local < hit.n.nodeValue.length) {
+            const rest = hit.n.splitText(local);
+            rest.parentNode.insertBefore(wbr, rest);
+          } else {
+            hit.n.parentNode.insertBefore(wbr, hit.n.nextSibling);
+          }
+        }
+      });
+      el.classList.add('js-phrase');
+    });
+  }
+
   /* ---- scroll reveal (SP only) ---- */
   if (sp.matches && 'IntersectionObserver' in window) {
     const targets = document.querySelectorAll(
