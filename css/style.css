@@ -195,9 +195,8 @@ main { display: block; }
 .hero { position: relative; height: calc(750 * var(--u)); background: var(--c-bg1); overflow: hidden; }
 .hero__bg {
   position: absolute; inset: 0;
-  background: var(--c-bg1) url(../img/texture.webp) center bottom / cover no-repeat;
+  background: var(--c-bg1) url(../img/texture-hero.webp) center bottom / cover no-repeat;
   background-blend-mode: multiply;
-  filter: blur(4px);
   transform: scale(1.02);
 }
 .hero__inner { position: absolute; top: 0; left: 50%; width: calc(1366 * var(--u)); height: 100%; transform: translateX(-50%); }
@@ -263,7 +262,7 @@ main { display: block; }
 
 /* ---------- marquee ---------- */
 .marquee { overflow: hidden; width: 100%; }
-.marquee__track { display: flex; width: max-content; animation: marquee var(--dur, 40s) linear infinite; }
+.marquee__track { display: flex; width: max-content; animation: marquee var(--dur, 40s) linear infinite; will-change: transform; }
 .marquee:hover .marquee__track { animation-play-state: paused; }
 @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 .marquee--thumbs { --dur: 45s; }
@@ -1154,3 +1153,13 @@ html.is-modal-open { overflow: hidden; }
 @media (max-width: 767px) and (prefers-reduced-motion: reduce) {
   .js-reveal { opacity: 1; transform: none; transition: none; }
 }
+
+/* =========================================================
+   Performance: below-the-fold background images load when near the viewport
+========================================================= */
+.js .value__bg.lazy-bg:not(.is-bg-in)::after,
+.js .features__bg.lazy-bg:not(.is-bg-in)::after,
+.js .flow__bg.lazy-bg:not(.is-bg-in)::after,
+.js .voice__bg.lazy-bg:not(.is-bg-in),
+.js .doc__bg.lazy-bg:not(.is-bg-in),
+.js .footer__bg.lazy-bg:not(.is-bg-in) { background-image: none; }

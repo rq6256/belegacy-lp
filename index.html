@@ -8,8 +8,11 @@
 <meta name="description" content="地方企業・経営者に密着し、代表の言葉や職場のリアルを一本の動画に。応募前の企業理解を深め、ミスマッチのない採用へ。Be Legacy（ビーレガシー）は地域特化型の採用メディアです。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500;700&family=Roboto:wght@600;700&family=Zen+Kaku+Gothic+New:wght@500;700;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css">
+<script>document.documentElement.classList.add('js')</script>
+<link rel="preload" as="image" href="img/hero-person.webp" imagesrcset="img/hero-person-760.webp 760w, img/hero-person.webp 1464w" imagesizes="(max-width: 767px) min(100.5vw, 581px), (max-width: 1023px) 54vw, min(732px, 53.6vw)" fetchpriority="high">
+<link rel="stylesheet" href="css/style.min.css">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500;700&family=Roboto:wght@600;700&family=Zen+Kaku+Gothic+New:wght@500;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500;700&family=Roboto:wght@600;700&family=Zen+Kaku+Gothic+New:wght@500;700&display=swap"></noscript>
 <link rel="icon" href="img/favicon-32.png" sizes="32x32">
 <link rel="icon" href="img/favicon-192.png" sizes="192x192">
 <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
@@ -19,7 +22,7 @@
 <!-- ============ Header ============ -->
 <header class="header" id="top">
   <div class="header__inner">
-    <a href="#top" class="header__logo"><img src="img/logo.png" alt="Be Legacy" width="150" height="53"></a>
+    <a href="#top" class="header__logo"><img src="img/logo.webp" alt="Be Legacy" width="150" height="53"></a>
     <nav class="header__nav" id="gnav" aria-label="メインメニュー">
       <ul class="header__list">
         <li><a href="#about">ビーレガシーについて</a></li>
@@ -66,7 +69,7 @@
     </div>
 
     <div class="hero__visual">
-      <img class="hero__person" src="img/hero-person.webp" alt="" width="732" height="655">
+      <img class="hero__person" src="img/hero-person.webp" srcset="img/hero-person-760.webp 760w, img/hero-person.webp 1464w" sizes="(max-width: 767px) min(100.5vw, 581px), (max-width: 1023px) 54vw, min(732px, 53.6vw)" alt="" width="732" height="655" fetchpriority="high">
       <div class="hero__badges">
         <div class="badge badge--1">
           <span class="badge__s">動画公開後１ヶ月で<br>求人応募数が</span>
@@ -101,34 +104,34 @@
 <section class="logos" aria-label="出演企業・自治体">
   <div class="marquee marquee--logos">
     <ul class="marquee__track">
-      <li><img src="img/logo-image.webp" alt="株式会社iMAGE" width="167" height="92"></li>
-      <li><img src="img/logo-bellevia.webp" alt="株式会社ワクワクするベルビア" width="87" height="92"></li>
-      <li><img src="img/logo-ina.webp" alt="伊那市" width="167" height="92"></li>
-      <li><img src="img/logo-chino.webp" alt="茅野市" width="167" height="92"></li>
-      <li><img src="img/logo-haramura.webp" alt="原村" width="61" height="92"></li>
-      <li><img src="img/logo-tenhou.webp" alt="みんなのテンホウ" width="167" height="92"></li>
-      <li><img src="img/logo-8peaks.webp" alt="8Peaks family" width="167" height="92"></li>
+      <li><img loading="lazy" decoding="async" src="img/logo-image.webp" alt="株式会社iMAGE" width="167" height="92"></li>
+      <li><img loading="lazy" decoding="async" src="img/logo-bellevia.webp" alt="株式会社ワクワクするベルビア" width="87" height="92"></li>
+      <li><img loading="lazy" decoding="async" src="img/logo-ina.webp" alt="伊那市" width="167" height="92"></li>
+      <li><img loading="lazy" decoding="async" src="img/logo-chino.webp" alt="茅野市" width="167" height="92"></li>
+      <li><img loading="lazy" decoding="async" src="img/logo-haramura.webp" alt="原村" width="61" height="92"></li>
+      <li><img loading="lazy" decoding="async" src="img/logo-tenhou.webp" alt="みんなのテンホウ" width="167" height="92"></li>
+      <li><img loading="lazy" decoding="async" src="img/logo-8peaks.webp" alt="8Peaks family" width="167" height="92"></li>
     </ul>
   </div>
 </section>
 
 <!-- ============ About & Results ============ -->
 <section class="sec value" id="about">
-  <div class="value__bg" aria-hidden="true"></div>
+  <div class="value__bg lazy-bg" aria-hidden="true"></div>
   <div class="inner">
     <div class="sec-head">
       <p class="sec-head__en">About &amp; Results</p>
-      <h2 class="sec-head__ttl sec-head__ttl--logo"><img src="img/logo-heading.png" alt="Be Legacy" width="167" height="59">は地域特化型の採用メディア</h2>
+      <h2 class="sec-head__ttl sec-head__ttl--logo"><img loading="lazy" decoding="async" src="img/logo-heading.webp" alt="Be Legacy" width="167" height="59">は地域特化型の採用メディア</h2>
     </div>
 
     <div class="about">
       <div class="about__mock" aria-hidden="true">
-        <img class="about__mock1" src="img/mock-01.webp" alt="" width="494" height="328">
-        <img class="about__mock2" src="img/mock-02.webp" alt="" width="494" height="328">
+        <img loading="lazy" decoding="async" class="about__mock1" src="img/mock-01.webp" alt="" width="494" height="328">
+        <img loading="lazy" decoding="async" class="about__mock2" src="img/mock-02.webp" alt="" width="494" height="328">
       </div>
       <div class="about__body">
         <p class="label">About</p>
-        <h3 class="sub-ttl sub-ttl--logo"><img src="img/logo-heading.png" alt="Be Legacy" width="131" height="46">とは</h3>
+        <h3 class="sub-ttl sub-ttl--logo"><img loading="lazy" decoding="async" src="img/logo-heading.webp" alt="Be Legacy" width="131" height="46">とは</h3>
         <span class="bar" aria-hidden="true"></span>
         <p class="about__catch"><span class="grad">平均1万回の再生回数</span>と<span class="grad">新聞掲載</span>で<br>狙った地域にアプローチできる</p>
         <p class="about__text">代表が大切にしていること。社員の表情や、現場に流れる空気。<br>求人票や採用ページの文字・写真だけでは伝わりにくい、<br>会社の魅力を、動画で届けます。<br>応募前に会社を知ることが、お互いに納得できる出会いにつながります。</p>
@@ -137,7 +140,7 @@
 
     <div class="results">
       <p class="label">Results</p>
-      <h3 class="sub-ttl sub-ttl--logo sub-ttl--noto"><img src="img/logo-heading.png" alt="Be Legacy" width="137" height="48">の実績</h3>
+      <h3 class="sub-ttl sub-ttl--logo sub-ttl--noto"><img loading="lazy" decoding="async" src="img/logo-heading.webp" alt="Be Legacy" width="137" height="48">の実績</h3>
       <ul class="results__list">
         <li class="rcard">
           <span class="pill">実績 01</span>
@@ -171,7 +174,7 @@
 
     <div class="cta cta--value">
       <p class="cta__lead">採用への活かし方も、あわせてご相談ください</p>
-      <a href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ1OQm_tpwHusVsD6zyC4J0I1R89GBWl7EatyoEaY0Zpk8MtUeYvqrLIhOOW6YD-E1v710WiqlVc?gv=true" class="btn btn--lg" data-modal="consult" target="_blank" rel="noopener"><span class="btn__label">企画を相談する</span><img class="btn__arrow" src="img/arrow-right.svg" alt="" width="24" height="24"></a>
+      <a href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ1OQm_tpwHusVsD6zyC4J0I1R89GBWl7EatyoEaY0Zpk8MtUeYvqrLIhOOW6YD-E1v710WiqlVc?gv=true" class="btn btn--lg" data-modal="consult" target="_blank" rel="noopener"><span class="btn__label">企画を相談する</span><img loading="lazy" decoding="async" class="btn__arrow" src="img/arrow-right.svg" alt="" width="24" height="24"></a>
       <p class="cta__sub">30分のオンライン相談で、貴社に合う企画と活用方法をご案内します</p>
     </div>
   </div>
@@ -189,25 +192,25 @@
         <li class="scard">
           <span class="pill pill--step">ステップ 01</span>
           <h3 class="scard__ttl">テーマを提示する</h3>
-          <img class="scard__img" src="img/step-01.webp" alt="" width="214" height="120">
+          <img loading="lazy" decoding="async" class="scard__img" src="img/step-01.webp" alt="" width="214" height="120">
           <p class="scard__txt">今回描く「学び」の<br>テーマを共有</p>
         </li>
         <li class="scard">
           <span class="pill pill--step">ステップ 02</span>
           <h3 class="scard__ttl">実際の仕事を見せる</h3>
-          <img class="scard__img" src="img/step-02.webp" alt="" width="214" height="120">
+          <img loading="lazy" decoding="async" class="scard__img" src="img/step-02.webp" alt="" width="214" height="120">
           <p class="scard__txt">密着で、現場の工夫と<br>リアルに迫る</p>
         </li>
         <li class="scard">
           <span class="pill pill--step">ステップ 03</span>
           <h3 class="scard__ttl">社員の声を聞く</h3>
-          <img class="scard__img" src="img/step-03.webp" alt="" width="214" height="120">
+          <img loading="lazy" decoding="async" class="scard__img" src="img/step-03.webp" alt="" width="214" height="120">
           <p class="scard__txt">現場の実践から<br>事業の厚みを伝える</p>
         </li>
         <li class="scard">
           <span class="pill pill--step">ステップ 04</span>
           <h3 class="scard__ttl">対談で深掘りする</h3>
-          <img class="scard__img" src="img/step-04.webp" alt="" width="214" height="120">
+          <img loading="lazy" decoding="async" class="scard__img" src="img/step-04.webp" alt="" width="214" height="120">
           <p class="scard__txt">決断の理由と<br>地域で続ける意味を掘り下げる</p>
         </li>
       </ol>
@@ -217,11 +220,11 @@
 
 <!-- ============ Features ============ -->
 <section class="sec features" id="features">
-  <div class="features__bg" aria-hidden="true"></div>
+  <div class="features__bg lazy-bg" aria-hidden="true"></div>
   <div class="inner">
     <div class="sec-head">
       <p class="sec-head__en">Features</p>
-      <h2 class="sec-head__ttl sec-head__ttl--logo"><img src="img/logo-heading.png" alt="Be Legacy" width="167" height="59">が選ばれる理由</h2>
+      <h2 class="sec-head__ttl sec-head__ttl--logo"><img loading="lazy" decoding="async" src="img/logo-heading.webp" alt="Be Legacy" width="167" height="59">が選ばれる理由</h2>
       <p class="sec-head__lead">動画だけで終わらない。地域に届く発信へ。</p>
     </div>
     <ul class="features__list">
@@ -271,9 +274,9 @@
           <p class="ucard__txt">YouTube動画を埋め込み、<br>代表の想いや職場のリアルを伝える接点に。</p>
         </div>
         <div class="ucard__img ucard__img--recruit" aria-hidden="true">
-          <img src="img/results-03.webp" alt="" width="160" height="160">
+          <img loading="lazy" decoding="async" src="img/results-03.webp" alt="" width="160" height="160">
           <span class="ucard__recruit">Recruit</span>
-          <img class="ucard__yt" src="img/icon-yt-screen.svg" alt="" width="43" height="43">
+          <img loading="lazy" decoding="async" class="ucard__yt" src="img/icon-yt-screen.svg" alt="" width="43" height="43">
         </div>
       </li>
       <li class="ucard">
@@ -283,7 +286,7 @@
           <span class="bar" aria-hidden="true"></span>
           <p class="ucard__txt">動画へのリンクを添えて、<br>貴社に関心を持っていただくきっかけに。</p>
         </div>
-        <div class="ucard__img ucard__img--scout"><img src="img/features-02.webp" alt="" width="190" height="190"></div>
+        <div class="ucard__img ucard__img--scout"><img loading="lazy" decoding="async" src="img/features-02.webp" alt="" width="190" height="190"></div>
       </li>
       <li class="ucard">
         <div class="ucard__body">
@@ -292,7 +295,7 @@
           <span class="bar" aria-hidden="true"></span>
           <p class="ucard__txt">説明会や商談の場面に合わせて、<br>動画の紹介方法をご相談いただけます。</p>
         </div>
-        <div class="ucard__img ucard__img--briefing"><img src="img/use-briefing.webp" alt="" width="190" height="190"></div>
+        <div class="ucard__img ucard__img--briefing"><img loading="lazy" decoding="async" src="img/use-briefing.webp" alt="" width="190" height="190"></div>
       </li>
       <li class="ucard">
         <div class="ucard__body">
@@ -301,7 +304,7 @@
           <span class="bar" aria-hidden="true"></span>
           <p class="ucard__txt">切り出し・再編集を含む利用可否や条件は、<br>個別にご案内します。</p>
         </div>
-        <div class="ucard__img ucard__img--sns"><img src="img/use-sns.webp" alt="" width="190" height="190"></div>
+        <div class="ucard__img ucard__img--sns"><img loading="lazy" decoding="async" src="img/use-sns.webp" alt="" width="190" height="190"></div>
       </li>
     </ul>
     <div class="terms">
@@ -309,7 +312,7 @@
       <p class="terms__txt">各用途での利用は、契約条件の範囲でご案内します。著作権はビーレガシーに帰属します。動画・記事のそのままの転載や再アップロードはできません。</p>
     </div>
     <div class="cta cta--use">
-      <a href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ1OQm_tpwHusVsD6zyC4J0I1R89GBWl7EatyoEaY0Zpk8MtUeYvqrLIhOOW6YD-E1v710WiqlVc?gv=true" class="btn btn--lg" data-modal="consult" target="_blank" rel="noopener"><span class="btn__label">企画を相談する</span><img class="btn__arrow" src="img/arrow-right.svg" alt="" width="24" height="24"></a>
+      <a href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ1OQm_tpwHusVsD6zyC4J0I1R89GBWl7EatyoEaY0Zpk8MtUeYvqrLIhOOW6YD-E1v710WiqlVc?gv=true" class="btn btn--lg" data-modal="consult" target="_blank" rel="noopener"><span class="btn__label">企画を相談する</span><img loading="lazy" decoding="async" class="btn__arrow" src="img/arrow-right.svg" alt="" width="24" height="24"></a>
       <p class="cta__sub">30分のオンライン相談で、貴社に合う企画と活用方法をご案内します</p>
     </div>
   </div>
@@ -317,7 +320,7 @@
 
 <!-- ============ Flow ============ -->
 <section class="sec flow" id="flow">
-  <div class="flow__bg" aria-hidden="true"></div>
+  <div class="flow__bg lazy-bg" aria-hidden="true"></div>
   <div class="inner">
     <div class="sec-head">
       <p class="sec-head__en">Flow</p>
@@ -328,25 +331,25 @@
       <li class="flcard">
         <span class="pill pill--step">1〜2週目</span>
         <h3 class="flcard__ttl">企画・要件定義</h3>
-        <img class="flcard__icon" src="img/icon-document.svg" alt="" width="70" height="70">
+        <img loading="lazy" decoding="async" class="flcard__icon" src="img/icon-document.svg" alt="" width="70" height="70">
         <p class="flcard__txt">目的やアピールしたいポイントを<br>すり合わせ</p>
       </li>
       <li class="flcard">
         <span class="pill pill--step">3〜4週目</span>
         <h3 class="flcard__ttl">構成・準備</h3>
-        <img class="flcard__icon flcard__icon--lg" src="img/icon-meeting.svg" alt="" width="80" height="80">
+        <img loading="lazy" decoding="async" class="flcard__icon flcard__icon--lg" src="img/icon-meeting.svg" alt="" width="80" height="80">
         <p class="flcard__txt">取材内容の設計、<br>ロケハン・撮影日程の調整</p>
       </li>
       <li class="flcard">
         <span class="pill pill--step">5〜6週目</span>
         <h3 class="flcard__ttl">撮影・編集</h3>
-        <img class="flcard__icon" src="img/icon-camera.svg" alt="" width="70" height="70">
+        <img loading="lazy" decoding="async" class="flcard__icon" src="img/icon-camera.svg" alt="" width="70" height="70">
         <p class="flcard__txt">現地取材を実施し、映像を編集</p>
       </li>
       <li class="flcard">
         <span class="pill pill--step">7〜8週目</span>
         <h3 class="flcard__ttl">確認・公開</h3>
-        <img class="flcard__icon" src="img/icon-youtube.svg" alt="" width="70" height="70">
+        <img loading="lazy" decoding="async" class="flcard__icon" src="img/icon-youtube.svg" alt="" width="70" height="70">
         <p class="flcard__txt">内容をご確認いただいたうえで<br>配信開始</p>
       </li>
     </ol>
@@ -404,7 +407,7 @@
 
 <!-- ============ Voice ============ -->
 <section class="sec voice" id="voice">
-  <div class="voice__bg" aria-hidden="true"></div>
+  <div class="voice__bg lazy-bg" aria-hidden="true"></div>
   <div class="sec-head sec-head--white">
     <p class="sec-head__en">Voice</p>
     <h2 class="sec-head__ttl">出演した企業様の声</h2>
@@ -413,7 +416,7 @@
     <div class="voice__item">
       <a href="#" class="voice__thumb" aria-label="出演企業様のインタビュー動画を見る">
         <img src="img/voice-thumb.webp" alt="茅野の交流拠点 8Peaks livingとは？" width="583" height="328" loading="lazy">
-        <img class="voice__play" src="img/icon-yt-red.svg" alt="" width="116" height="116">
+        <img loading="lazy" decoding="async" class="voice__play" src="img/icon-yt-red.svg" alt="" width="116" height="116">
       </a>
       <div class="voice__body">
         <p class="voice__co">株式会社ダミーダミー</p>
@@ -430,7 +433,7 @@
   <div class="inner">
     <div class="cta cta--voice">
       <p class="cta__lead">貴社に合う企画を、一緒に考えます</p>
-      <a href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ1OQm_tpwHusVsD6zyC4J0I1R89GBWl7EatyoEaY0Zpk8MtUeYvqrLIhOOW6YD-E1v710WiqlVc?gv=true" class="btn btn--lg" data-modal="consult" target="_blank" rel="noopener"><span class="btn__label">企画を相談する</span><img class="btn__arrow" src="img/arrow-right.svg" alt="" width="24" height="24"></a>
+      <a href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ1OQm_tpwHusVsD6zyC4J0I1R89GBWl7EatyoEaY0Zpk8MtUeYvqrLIhOOW6YD-E1v710WiqlVc?gv=true" class="btn btn--lg" data-modal="consult" target="_blank" rel="noopener"><span class="btn__label">企画を相談する</span><img loading="lazy" decoding="async" class="btn__arrow" src="img/arrow-right.svg" alt="" width="24" height="24"></a>
       <p class="cta__sub">30分のオンライン相談で、貴社に合う企画と活用方法をご案内します</p>
     </div>
   </div>
@@ -449,20 +452,16 @@
         <div class="faq__a"><span class="faq__mark">A</span><p class="faq__atxt">ビーレガシーは、地域と仕事の魅力を届けるメディアです。採用サイト、スカウトメール、会社説明会、面接前の情報提供など、採用活動にも活用いただけます。</p></div>
       </details>
       <details class="faq__item">
-        <summary class="faq__q"><span class="faq__mark">Q</span><span class="faq__qtxt">再生数は保証されますか？</span></summary>
-        <div class="faq__a"><span class="faq__mark">A</span><p class="faq__atxt">（回答テキストが入ります）</p></div>
+        <summary class="faq__q"><span class="faq__mark">Q</span><span class="faq__qtxt">動画の再生数は保証されますか？</span></summary>
+        <div class="faq__a"><span class="faq__mark">A</span><p class="faq__atxt">平均で1万回再生の実績はございますが、確約はできません。ただし、精密な広告配信により狙ったターゲット層へ届ける設計のため、単純な再生数よりも「誰に届いたか（採用や取引の検討層か）」を重視して運用しております。</p></div>
       </details>
       <details class="faq__item">
-        <summary class="faq__q"><span class="faq__mark">Q</span><span class="faq__qtxt">公開後、内容に問題があった場合は修正できますか？</span></summary>
-        <div class="faq__a"><span class="faq__mark">A</span><p class="faq__atxt">（回答テキストが入ります）</p></div>
+        <summary class="faq__q"><span class="faq__mark">Q</span><span class="faq__qtxt">YouTube公開による炎上リスクが心配です。</span></summary>
+        <div class="faq__a"><span class="faq__mark">A</span><p class="faq__atxt">公開前に必ず内容（事実関係や表現）をご確認いただき、修正を反映した上で配信します。また公開後も定期的にコメントを監視し、誹謗中傷等は非表示・削除する体制を整えております。</p></div>
       </details>
       <details class="faq__item">
-        <summary class="faq__q"><span class="faq__mark">Q</span><span class="faq__qtxt">動画の著作権や、自社での二次利用について教えてください。</span></summary>
-        <div class="faq__a"><span class="faq__mark">A</span><p class="faq__atxt">（回答テキストが入ります）</p></div>
-      </details>
-      <details class="faq__item">
-        <summary class="faq__q"><span class="faq__mark">Q</span><span class="faq__qtxt">出演を検討する際、何か基準はありますか？</span></summary>
-        <div class="faq__a"><span class="faq__mark">A</span><p class="faq__atxt">（回答テキストが入ります）</p></div>
+        <summary class="faq__q"><span class="faq__mark">Q</span><span class="faq__qtxt">動画の権利や、自社サイトへの二次利用について教えてください。</span></summary>
+        <div class="faq__a"><span class="faq__mark">A</span><p class="faq__atxt">著作権は弊社（ビーレガシー）に帰属しますが、採用サイトへのYouTubeリンクの埋め込みや共有は自由に行っていただけます。<br>また、ショート動画のデータはそのままお渡ししますので、貴社SNSでご活用ください。</p></div>
       </details>
     </div>
   </div>
@@ -470,7 +469,7 @@
 
 <!-- ============ Document ============ -->
 <section class="sec doc" id="document">
-  <div class="doc__bg" aria-hidden="true"></div>
+  <div class="doc__bg lazy-bg" aria-hidden="true"></div>
   <div class="sec-head sec-head--white">
     <p class="sec-head__en">Document</p>
     <h2 class="sec-head__ttl">お役立ち資料について</h2>
@@ -495,7 +494,7 @@
       <li>投稿しても応募につながらない</li>
     </ul>
     <p class="doc__text">そんな悩みに応える、採用SNSガイドラインです。<br>自社SNSの始め方からメディアの選び方、応募につなげる工夫まで、具体例とともに解説。<br>自社に合った発信方法を見つけるヒントとしてご活用ください。</p>
-    <a href="#document" class="btn btn--doc btn--outline" data-modal="document" data-doc="guide"><span class="btn__label">地方企業のためのSNS活用ガイド</span><img class="btn__arrow" src="img/arrow-right-green.svg" alt="" width="24" height="24"></a>
+    <a href="#document" class="btn btn--doc btn--outline" data-modal="document" data-doc="guide"><span class="btn__label">地方企業のためのSNS活用ガイド</span><img loading="lazy" decoding="async" class="btn__arrow" src="img/arrow-right-green.svg" alt="" width="24" height="24"></a>
   </div>
 </section>
 
@@ -511,12 +510,12 @@
       <div class="contact__item">
         <div class="contact__visual contact__visual--consult"><img src="img/contact-consult.webp" alt="" width="221" height="221" loading="lazy"></div>
         <p class="contact__note">30分のオンライン相談で<br class="sp-only">貴社に合う企画と活用方法をご案内！</p>
-        <a href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ1OQm_tpwHusVsD6zyC4J0I1R89GBWl7EatyoEaY0Zpk8MtUeYvqrLIhOOW6YD-E1v710WiqlVc?gv=true" class="btn btn--contact" data-modal="consult" target="_blank" rel="noopener"><span class="btn__label">企画を相談する</span><img class="btn__arrow" src="img/arrow-right.svg" alt="" width="24" height="24"></a>
+        <a href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ1OQm_tpwHusVsD6zyC4J0I1R89GBWl7EatyoEaY0Zpk8MtUeYvqrLIhOOW6YD-E1v710WiqlVc?gv=true" class="btn btn--contact" data-modal="consult" target="_blank" rel="noopener"><span class="btn__label">企画を相談する</span><img loading="lazy" decoding="async" class="btn__arrow" src="img/arrow-right.svg" alt="" width="24" height="24"></a>
       </div>
       <div class="contact__item">
         <div class="contact__visual contact__visual--media"><img src="img/contact-media.webp" alt="ビーレガシー説明資料の表紙" width="272" height="153" loading="lazy"></div>
         <p class="contact__note">3分でビーレガシーについてわかる！</p>
-        <a href="#contact" class="btn btn--contact btn--outline" data-modal="document" data-doc="media"><span class="btn__label">メディア説明資料を請求する</span><img class="btn__arrow" src="img/arrow-right-green.svg" alt="" width="24" height="24"></a>
+        <a href="#contact" class="btn btn--contact btn--outline" data-modal="document" data-doc="media"><span class="btn__label">メディア説明資料を請求する</span><img loading="lazy" decoding="async" class="btn__arrow" src="img/arrow-right-green.svg" alt="" width="24" height="24"></a>
       </div>
     </div>
   </div>
@@ -526,17 +525,17 @@
 
 <!-- ============ Footer ============ -->
 <footer class="footer">
-  <div class="footer__bg" aria-hidden="true"></div>
+  <div class="footer__bg lazy-bg" aria-hidden="true"></div>
   <div class="inner footer__inner">
     <div class="footer__left">
-      <a href="#top" class="footer__logo"><img src="img/logo-white.png" alt="Be Legacy" width="150" height="53"></a>
+      <a href="#top" class="footer__logo"><img loading="lazy" decoding="async" src="img/logo-white.webp" alt="Be Legacy" width="150" height="53"></a>
       <p class="footer__company">運営会社：株式会社ビーヘルシー</p>
       <ul class="footer__sub">
         <li><a href="#">会社概要</a></li>
         <li><a href="#">プライバシーポリシー</a></li>
         <li><a href="#">お問い合わせ</a></li>
       </ul>
-      <a href="#" class="footer__yt" aria-label="YouTube"><img src="img/icon-youtube-white.svg" alt="" width="25" height="25"></a>
+      <a href="#" class="footer__yt" aria-label="YouTube"><img loading="lazy" decoding="async" src="img/icon-youtube-white.svg" alt="" width="25" height="25"></a>
     </div>
     <div class="footer__right">
       <ul class="footer__nav">
@@ -555,14 +554,14 @@
       </div>
     </div>
   </div>
-  <a href="#top" class="pagetop"><span class="pagetop__circle"><img src="img/chevron-green.svg" alt="" width="12" height="7"></span><span class="pagetop__txt">Page TOP</span></a>
+  <a href="#top" class="pagetop"><span class="pagetop__circle"><img loading="lazy" decoding="async" src="img/chevron-green.svg" alt="" width="12" height="7"></span><span class="pagetop__txt">Page TOP</span></a>
   <p class="footer__copy">Copyright(c) 2026 © BE-LEGACY&nbsp; All Rights Reserved.</p>
 </footer>
 
 <!-- ============ SP fixed CTA ============ -->
 <div class="sp-cta" id="spCta" aria-label="お問い合わせ">
   <a href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ1OQm_tpwHusVsD6zyC4J0I1R89GBWl7EatyoEaY0Zpk8MtUeYvqrLIhOOW6YD-E1v710WiqlVc?gv=true" class="sp-cta__btn sp-cta__btn--consult" data-modal="consult" target="_blank" rel="noopener">企画を相談する</a>
-  <a href="#document" class="sp-cta__btn sp-cta__btn--doc" data-modal="document" data-doc="guide"><img class="sp-cta__thumb" src="img/doc-thumb-01.webp" alt="" width="40" height="23"><span>地方企業のための<br>SNS活用ガイド</span></a>
+  <a href="#document" class="sp-cta__btn sp-cta__btn--doc" data-modal="document" data-doc="guide"><img loading="lazy" decoding="async" class="sp-cta__thumb" src="img/doc-thumb-01.webp" alt="" width="40" height="23"><span>地方企業のための<br>SNS活用ガイド</span></a>
 </div>
 
 <!-- ============ Floating banner (PC / tablet) ============ -->
@@ -570,11 +569,11 @@
   <a href="#document" class="fbanner__link" data-modal="document" data-doc="guide">
     <span class="fbanner__head"><span>地方企業のための採用SNSガイドライン配布中</span></span>
     <span class="fbanner__catch">自社に合う<br>発信方法がわかる！</span>
-    <span class="fbanner__btn"><span>資料を請求する</span><img src="img/arrow-right-green.svg" alt="" width="15" height="15"></span>
+    <span class="fbanner__btn"><span>資料を請求する</span><img loading="lazy" decoding="async" src="img/arrow-right-green.svg" alt="" width="15" height="15"></span>
     <span class="docs-stack fbanner__docs" aria-hidden="true">
-      <img class="docs-stack__img docs-stack__img--3" src="img/doc-thumb-04.webp" alt="" width="94" height="53">
-      <img class="docs-stack__img docs-stack__img--2" src="img/doc-thumb-02.webp" alt="" width="96" height="53">
-      <img class="docs-stack__img docs-stack__img--1" src="img/doc-thumb-01.webp" alt="" width="94" height="53">
+      <img loading="lazy" decoding="async" class="docs-stack__img docs-stack__img--3" src="img/doc-thumb-04.webp" alt="" width="94" height="53">
+      <img loading="lazy" decoding="async" class="docs-stack__img docs-stack__img--2" src="img/doc-thumb-02.webp" alt="" width="96" height="53">
+      <img loading="lazy" decoding="async" class="docs-stack__img docs-stack__img--1" src="img/doc-thumb-01.webp" alt="" width="94" height="53">
     </span>
   </a>
   <button type="button" class="fbanner__close" aria-label="バナーを閉じる"></button>
@@ -603,11 +602,11 @@
     <div class="modal__body modal__body--doc">
       <!-- 資料請求フォームの埋め込み先 -->
       <p class="modal__msg">資料請求フォームは現在準備中です。<br>お急ぎの方は、オンライン相談からお気軽にお問い合わせください。</p>
-      <a href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ1OQm_tpwHusVsD6zyC4J0I1R89GBWl7EatyoEaY0Zpk8MtUeYvqrLIhOOW6YD-E1v710WiqlVc?gv=true" class="btn btn--modal" data-modal="consult" target="_blank" rel="noopener"><span class="btn__label">企画を相談する</span><img class="btn__arrow" src="img/arrow-right.svg" alt="" width="24" height="24"></a>
+      <a href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ1OQm_tpwHusVsD6zyC4J0I1R89GBWl7EatyoEaY0Zpk8MtUeYvqrLIhOOW6YD-E1v710WiqlVc?gv=true" class="btn btn--modal" data-modal="consult" target="_blank" rel="noopener"><span class="btn__label">企画を相談する</span><img loading="lazy" decoding="async" class="btn__arrow" src="img/arrow-right.svg" alt="" width="24" height="24"></a>
     </div>
   </div>
 </dialog>
 
-<script src="js/main.js"></script>
+<script src="js/main.min.js" defer></script>
 </body>
 </html>

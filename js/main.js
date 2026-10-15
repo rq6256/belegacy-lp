@@ -15,6 +15,21 @@
     document.addEventListener('keydown', (e) => { if (e.key === 'Escape') setOpen(false); });
   }
 
+  /* ---- below-the-fold background images: load when near the viewport ---- */
+  const lazyBgs = document.querySelectorAll('.lazy-bg');
+  if (lazyBgs.length) {
+    if ('IntersectionObserver' in window) {
+      const bgIo = new IntersectionObserver((entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) { e.target.classList.add('is-bg-in'); bgIo.unobserve(e.target); }
+        });
+      }, { rootMargin: '800px 0px' });
+      lazyBgs.forEach((el) => bgIo.observe(el));
+    } else {
+      lazyBgs.forEach((el) => el.classList.add('is-bg-in'));
+    }
+  }
+
   /* ---- marquee: duplicate contents for a seamless loop ---- */
   document.querySelectorAll('.marquee__track').forEach((track) => {
     Array.from(track.children).forEach((el) => {
